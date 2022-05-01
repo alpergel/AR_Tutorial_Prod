@@ -1,16 +1,11 @@
 ---
-name: Tails Azimuth
+name: Alper Gel
 avatar: /static/images/avatar.png
-occupation: Professor of Atmospheric Science
-company: Stanford University
-email: address@yoursite.com
-twitter: https://twitter.com/Twitter
-linkedin: https://www.linkedin.com
-github: https://github.com
+occupation: Research Student at ASU Interactive Robotics Laboratory, AI/CV Intern at RadiusAI
+company: UC Berkeley
+email: alperbora04@gmail.com
+linkedin: https://www.linkedin.com/in/alper-gel-04/
+github: https://github.com/alpergel
 ---
 
-Tails Azimuth is a professor of atmospheric sciences at the Stanford AI Lab. His research interests includes complexity modelling of tailwinds, headwinds and crosswinds.
-
-He leads the clean energy group which develops 3D air pollution-climate models, writes differential equation solvers, and manufactures titanium plated air ballons. In his free time he bakes raspberry pi.
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed neque elit, tristique placerat feugiat ac, facilisis vitae arcu. Proin eget egestas augue. Praesent ut sem nec arcu pellentesque aliquet. Duis dapibus diam vel metus tempus vulputate.
+Hi! I'm Alper, an incoming freshman to UC Berkeley and aspiring biomedical/EECS major. Besides biomed, I have a strong interest in robotics, AI, Augmented Reality/XR technologies, and spreading STEM opportunities to all! For the last 4 years, I have been fortunate to gain significant research experience from my research internship with Dr.Ben Amor's Interactive Robotics Lab at ASU working on projects ranging from optimization of prosthetic movements to open source augmented reality systems.
