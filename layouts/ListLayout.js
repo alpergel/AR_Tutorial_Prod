@@ -52,22 +52,7 @@ export default function ListLayout({ posts, title, initialDisplayPosts = [], pag
         <div className="space-y-2 pt-2 pb-2 md:space-y-5">
           <h1 className="space-y-2 xl:grid xl:grid-cols-4 xl:items-baseline xl:space-y-0">Tags</h1>
         </div>
-        <div className="flex flex-wrap">
-          {Object.keys(tags).length === 0 && 'No tags found.'}
-          {sortedTags.map((t) => {
-            return (
-              <div key={t} className="mt-2 mb-2 mr-5">
-                <Tag text={t} />
-                <Link
-                  href={`/tags/${kebabCase(t)}`}
-                  className="-ml-2 text-sm font-semibold uppercase text-gray-600 dark:text-gray-300"
-                >
-                  {` (${tags[t]})`}
-                </Link>
-              </div>
-            )
-          })}
-        </div>
+
         <ul>
           {!filteredBlogPosts.length && 'No posts found.'}
           {displayPosts.map((frontMatter) => {
