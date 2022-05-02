@@ -49,9 +49,6 @@ export default function ListLayout({ posts, title, initialDisplayPosts = [], pag
             </svg>
           </div>
         </div>
-        <div className="space-y-2 pt-2 pb-2 md:space-y-5">
-          <h1 className="space-y-2 xl:grid xl:grid-cols-4 xl:items-baseline xl:space-y-0">Tags</h1>
-        </div>
 
         <ul>
           {!filteredBlogPosts.length && 'No posts found.'}
