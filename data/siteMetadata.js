@@ -2,7 +2,9 @@ const siteMetadata = {
   title: '',
   author: 'Created with 💖 by Alper Gel',
   headerTitle: 'AR Setup',
-  description: 'Tutorials and Starter Templates for Linux AR development with PNS headset',
+  description:
+    'Check out our most recent Tutorials/Starter Templates for Linux OSS AR development with the PNS headset',
+  about_this_page: '',
   language: 'en-us',
   theme: 'system', // system, dark or light
   siteUrl: 'https://ar-tutorial-prod.vercel.app/',

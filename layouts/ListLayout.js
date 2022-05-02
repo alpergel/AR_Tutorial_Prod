@@ -4,8 +4,9 @@ import siteMetadata from '@/data/siteMetadata'
 import { useState } from 'react'
 import Pagination from '@/components/Pagination'
 import formatDate from '@/lib/utils/formatDate'
+import kebabCase from '@/lib/utils/kebabCase'
 
-export default function ListLayout({ posts, title, initialDisplayPosts = [], pagination }) {
+export default function ListLayout({ posts, title, initialDisplayPosts = [], pagination, tags }) {
   const [searchValue, setSearchValue] = useState('')
   const filteredBlogPosts = posts.filter((frontMatter) => {
     const searchContent = frontMatter.title + frontMatter.summary + frontMatter.tags.join(' ')
@@ -15,7 +16,7 @@ export default function ListLayout({ posts, title, initialDisplayPosts = [], pag
   // If initialDisplayPosts exist, display it if no searchValue is specified
   const displayPosts =
     initialDisplayPosts.length > 0 && !searchValue ? initialDisplayPosts : filteredBlogPosts
-
+  const sortedTags = Object.keys(tags).sort((a, b) => tags[b] - tags[a])
   return (
     <>
       <div className="divide-y">
@@ -23,12 +24,13 @@ export default function ListLayout({ posts, title, initialDisplayPosts = [], pag
           <h1 className="text-3xl font-extrabold leading-9 tracking-tight text-gray-900 dark:text-gray-100 sm:text-4xl sm:leading-10 md:text-6xl md:leading-14">
             {title}
           </h1>
+
           <div className="relative max-w-lg">
             <input
-              aria-label="Search articles"
+              aria-label="Search Posts"
               type="text"
               onChange={(e) => setSearchValue(e.target.value)}
-              placeholder="Search articles"
+              placeholder="Search Posts"
               className="block w-full rounded-md border border-gray-300 bg-white px-4 py-2 text-gray-900 focus:border-primary-500 focus:ring-primary-500 dark:border-gray-900 dark:bg-gray-800 dark:text-gray-100"
             />
             <svg
@@ -46,6 +48,25 @@ export default function ListLayout({ posts, title, initialDisplayPosts = [], pag
               />
             </svg>
           </div>
+        </div>
+        <div className="space-y-2 pt-2 pb-2 md:space-y-5">
+          <h1 className="space-y-2 xl:grid xl:grid-cols-4 xl:items-baseline xl:space-y-0">Tags</h1>
+        </div>
+        <div className="flex flex-wrap">
+          {Object.keys(tags).length === 0 && 'No tags found.'}
+          {sortedTags.map((t) => {
+            return (
+              <div key={t} className="mt-2 mb-2 mr-5">
+                <Tag text={t} />
+                <Link
+                  href={`/tags/${kebabCase(t)}`}
+                  className="-ml-2 text-sm font-semibold uppercase text-gray-600 dark:text-gray-300"
+                >
+                  {` (${tags[t]})`}
+                </Link>
+              </div>
+            )
+          })}
         </div>
         <ul>
           {!filteredBlogPosts.length && 'No posts found.'}
