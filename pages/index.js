@@ -8,6 +8,7 @@ import Slide from 'react-reveal/Slide'
 import NewsletterForm from '@/components/NewsletterForm'
 import ReactPlayer from 'react-player'
 import React from 'react'
+
 import Image from '@/components/Image'
 
 const MAX_DISPLAY = 5
@@ -19,6 +20,21 @@ export async function getStaticProps() {
 }
 
 export default function Home({ posts }) {
+  const startPreview = (e) => {
+    const vid = e.target
+    vid.muted = true
+    vid.play()
+  }
+
+  //  onMouseOut
+  const stopPreview = (e) => {
+    const vid = e.target
+    vid.muted = false
+    vid.currentTime = 0
+    vid.pause()
+  }
+  const sampleVideo1 =
+    'https://res.cloudinary.com/dssy0cdnx/video/upload/v1652454608/moses_video_xjnltd.mp4'
   return (
     <>
       <div className="divide-y divide-gray-200 dark:divide-gray-700">
@@ -72,12 +88,13 @@ export default function Home({ posts }) {
                     }
                   >
                     <Image src={'/static/images/giphy.gif'} alt="my gif" height={500} width={500} />
-                    <video width="320" height="240" controls>
-                      <source
-                        src="https://res.cloudinary.com/dssy0cdnx/video/upload/v1652454608/moses_video_xjnltd.mp4"
-                        type="video/mp4"
-                      />
-                    </video>
+                    <video
+                      src={sampleVideo1}
+                      className="container"
+                      controls
+                      onMouseEnter={startPreview}
+                      onMouseLeave={stopPreview}
+                    ></video>
                     <div className="p-6">
                       <h2 className="mb-3 text-2xl font-bold leading-8 tracking-tight">
                         Sample video showing the possibilities of PNS + SK + Monado

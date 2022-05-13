@@ -52,9 +52,6 @@ const securityHeaders = [
   },
 ]
 
-const withVideos = require('next-videos')
-module.exports = withVideos()
-
 module.exports = {
   images: {
     domains: ['giphy.com'],
