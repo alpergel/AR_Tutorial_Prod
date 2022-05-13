@@ -8,6 +8,7 @@ import Slide from 'react-reveal/Slide'
 import NewsletterForm from '@/components/NewsletterForm'
 import ReactPlayer from 'react-player'
 import React from 'react'
+import Image from '@/components/Image'
 const MAX_DISPLAY = 5
 
 export async function getStaticProps() {
@@ -33,16 +34,47 @@ export default function Home({ posts }) {
             with any questions or guide requests, Ill try my best to respond in a timely manner!
             Good luck and enjoy your new adventure into the world of open source augmented reality!
           </h1>
-          <div className="mx-center container">
+          <div className="mx-left container">
             <div className="-m-4 flex flex-wrap">
               <div className="aspect-w-16 aspect-h-9">
-                <div className="md p-4 md:w-1/2" style={{ maxWidth: '544px' }}>
+                <div className="md md:1/2 p-4" style={{ maxWidth: '544px' }}>
                   <div
                     className={
                       '  overflow-hidden rounded-md border-2 border-gray-200 border-opacity-60 dark:border-gray-700'
                     }
                   >
-                    <ReactPlayer url="https://www.youtube.com/watch?v=wWgIAphfn2U" />
+                    <Image src={'/static/images/giphy.gif'} alt="my gif" height={500} width={500} />
+                    <div className="p-6">
+                      <h2 className="mb-3 text-2xl font-bold leading-8 tracking-tight">
+                        Sample video showing the possibilities of PNS + SK + Monado
+                      </h2>
+                      <p className="prose mb-3 max-w-none text-gray-500 dark:text-gray-400">
+                        {'Credit: Moses Turner'}
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className="mx-right container">
+            <div className="-m-4 flex flex-wrap">
+              <div className="aspect-w-16 aspect-h-9">
+                <div className="md md:1/2 p-4" style={{ maxWidth: '544px' }}>
+                  <div
+                    className={
+                      '  overflow-hidden rounded-md border-2 border-gray-200 border-opacity-60 dark:border-gray-700'
+                    }
+                  >
+                    <Image src={'/static/images/giphy.gif'} alt="my gif" height={500} width={500} />
+                    <div className="p-6">
+                      <h2 className="mb-3 text-2xl font-bold leading-8 tracking-tight">
+                        Sample video showing the possibilities of PNS + SK + Monado
+                      </h2>
+                      <p className="prose mb-3 max-w-none text-gray-500 dark:text-gray-400">
+                        {'Credit: Moses Turner'}
+                      </p>
+                    </div>
                   </div>
                 </div>
               </div>
