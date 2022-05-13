@@ -89,57 +89,55 @@ export default function Home({ posts }) {
         <div className="divide-y divide-gray-200 dark:divide-gray-700">
           <div className="space-y-2 pt-6 pb-8 md:space-y-5">
             <h1 className="text-3xl font-extrabold leading-9 tracking-tight text-gray-900 dark:text-gray-100 sm:text-4xl sm:leading-10 md:text-6xl md:leading-14">
-              Latest Tutorials and Starter Templates
+              Lets get started!
             </h1>
             <p className="text-lg leading-7 text-gray-500 dark:text-gray-400">
-              {siteMetadata.description}
+              Click on the post below to start your OSS augmented reality journey. If you have
+              already began the tutorial series, please click the "All tutorials" tab in the page
+              header, and select the next tutorial that you would like to read.
             </p>
           </div>
           <ul className="divide-y divide-gray-200 dark:divide-gray-700">
-            {!posts.length && 'No posts found.'}
-            {posts.slice(0, MAX_DISPLAY).map((frontMatter) => {
-              const { slug, date, title, summary } = frontMatter
-              return (
-                <li key={slug} className="py-12">
-                  <article className="transition hover:translate-x-2 hover:translate-y-2">
-                    <div className="space-y-2 xl:grid xl:grid-cols-4 xl:items-baseline xl:space-y-0">
-                      <dl>
-                        <dt className="sr-only">Published on</dt>
-                        <dd className="text-base font-medium leading-6 text-gray-500 dark:text-gray-400">
-                          <time dateTime={date}>{formatDate(date)}</time>
-                        </dd>
-                      </dl>
-                      <div className="space-y-5 xl:col-span-3">
-                        <div className="space-y-6">
-                          <div>
-                            <h2 className="text-2xl font-bold leading-8 tracking-tight">
-                              <Link
-                                href={`/blog/${slug}`}
-                                className="text-gray-900 dark:text-gray-100"
-                              >
-                                {title}
-                              </Link>
-                            </h2>
-                          </div>
-                          <div className="prose max-w-none text-gray-500 dark:text-gray-400">
-                            {summary}
-                          </div>
-                        </div>
-                        <div className="text-base font-medium leading-6">
+            <li key="tutorial-vocab" className="py-12">
+              <article className="transition hover:translate-x-2 hover:translate-y-2">
+                <div className="space-y-2 xl:grid xl:grid-cols-4 xl:items-baseline xl:space-y-0">
+                  <dl>
+                    <dt className="sr-only">Published on</dt>
+                    <dd className="text-base font-medium leading-6 text-gray-500 dark:text-gray-400">
+                      <time dateTime="2022-05-13">{formatDate('2022-05-13')}</time>
+                    </dd>
+                  </dl>
+                  <div className="space-y-5 xl:col-span-3">
+                    <div className="space-y-6">
+                      <div>
+                        <h2 className="text-2xl font-bold leading-8 tracking-tight">
                           <Link
-                            href={`/blog/${slug}`}
-                            className="text-primary-500 hover:text-primary-600 dark:hover:text-primary-400"
-                            aria-label={`Read "${title}"`}
+                            href={`/blog/tutorial-vocab`}
+                            className="text-gray-900 dark:text-gray-100"
                           >
-                            Read more &rarr;
+                            1. Tutorial Vocab
                           </Link>
-                        </div>
+                        </h2>
+                      </div>
+                      <div className="prose max-w-none text-gray-500 dark:text-gray-400">
+                        Please read through this first post to learn and understand all of the
+                        commonly used libraries, vocabulary terms, and abbreviations throughout the
+                        rest of the tutorial series.
                       </div>
                     </div>
-                  </article>
-                </li>
-              )
-            })}
+                    <div className="text-base font-medium leading-6">
+                      <Link
+                        href={`/blog/tutorial-vocab`}
+                        className="text-primary-500 hover:text-primary-600 dark:hover:text-primary-400"
+                        aria-label={`Read Tutorial Vocab`}
+                      >
+                        Read more &rarr;
+                      </Link>
+                    </div>
+                  </div>
+                </div>
+              </article>
+            </li>
           </ul>
         </div>
       </Slide>
