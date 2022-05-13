@@ -23,30 +23,21 @@ export default function Credits({ authorDetails }) {
           Special thanks to everyone listed!
         </p>
 
-        <ul
-          role="list"
-          className="list-disc space-y-3 pl-5 text-slate-400 marker:text-gray-400 hover:scale-110"
-        >
+        <ul role="list" className="list-disc space-y-3 pl-5 text-slate-400 marker:text-gray-400">
           <li>
             Prof. Heni Ben Amor: For support throughout the project, the opportunity to bring AR to
             his lab
           </li>
         </ul>
-        <ul
-          role="list"
-          className="list-disc space-y-3 pl-5 text-slate-400 marker:text-gray-400 hover:scale-110"
-        >
+        <ul role="list" className="list-disc space-y-3 pl-5 text-slate-400 marker:text-gray-400 ">
           <li>Tyler Menezes: For helping with technical questions</li>
         </ul>
-        <ul
-          role="list"
-          className="list-disc space-y-3 pl-5 text-slate-400 marker:text-gray-400 hover:scale-110"
-        >
+        <ul role="list" className="list-disc space-y-3 pl-5 text-slate-400 marker:text-gray-400 ">
           <li>Shubham Patil: For helping with technical questions</li>
         </ul>
         <ul
           role="list"
-          className="hover:amber-500 list-disc space-y-3 pl-5 text-slate-400 marker:text-gray-400 hover:scale-110"
+          className="hover:amber-500 list-disc space-y-3 pl-5 text-slate-400 marker:text-gray-400"
         >
           <li>
             Github User timlrx: For creating the "tailwind-nextjs-starter-blog" starter template

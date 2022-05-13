@@ -5,9 +5,10 @@ import siteMetadata from '@/data/siteMetadata'
 import { getAllFilesFrontMatter } from '@/lib/mdx'
 import formatDate from '@/lib/utils/formatDate'
 import Slide from 'react-reveal/Slide'
-
+import Video_Card from '@/components/Video_Card'
 import NewsletterForm from '@/components/NewsletterForm'
-
+import ReactPlayer from 'react-player'
+import React from 'react'
 const MAX_DISPLAY = 5
 
 export async function getStaticProps() {
@@ -24,6 +25,30 @@ export default function Home({ posts }) {
           <h1 className="text-3xl font-extrabold leading-9 tracking-tight text-gray-900 dark:text-gray-100 sm:text-4xl sm:leading-10 md:text-6xl md:leading-14">
             About this Website
           </h1>
+          <h1 className="text-lg leading-7 text-gray-500 dark:text-gray-400">
+            This website is meant to help students at the ASU Interactive Robotics Laboratory with
+            their projects involving the Project Northstar Headsets built for the lab. In the
+            section below, and in the "All Tutorials" tab, you'll find detailed, step-by-step
+            tutorials that get you from library installation to starting on a Stereokit sample
+            project. Please feel free to reach out to me at my email in the footer of this website
+            with any questions or guide requests, Ill try my best to respond in a timely manner!
+            Good luck and enjoy your new adventure into the world of open source augmented reality!
+          </h1>
+          <div className="mx-center container">
+            <div className="-m-4 flex flex-wrap">
+              <div className="aspect-w-16 aspect-h-9">
+                <div className="md p-4 md:w-1/2" style={{ maxWidth: '544px' }}>
+                  <div
+                    className={
+                      '  overflow-hidden rounded-md border-2 border-gray-200 border-opacity-60 dark:border-gray-700'
+                    }
+                  >
+                    <ReactPlayer url="https://www.youtube.com/watch?v=wWgIAphfn2U" />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
           <p className="text-lg leading-7 text-gray-500 dark:text-gray-400">
             {siteMetadata.about_this_page}
           </p>

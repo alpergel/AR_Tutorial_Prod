@@ -1,6 +1,6 @@
 const siteMetadata = {
   title: '',
-  author: 'Created with 💖 by Alper Gel',
+  author: 'Alper Gel',
   headerTitle: 'ASU IRL AR Setup Tutorial',
   description:
     'Check out our most recent Tutorials/Starter Templates for Linux OSS AR development with the PNS headset',
@@ -13,11 +13,6 @@ const siteMetadata = {
   image: '/static/images/avatar.png',
   socialBanner: '',
   email: 'alperbora04@gmail.com',
-  github: 'https://github.com',
-  twitter: 'https://twitter.com/Twitter',
-  facebook: 'https://facebook.com',
-  youtube: 'https://youtube.com',
-  linkedin: 'https://www.linkedin.com',
   locale: 'en-US',
   analytics: {
     // If you want to use an analytics provider you have to add it to the
