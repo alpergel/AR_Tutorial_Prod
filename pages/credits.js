@@ -33,6 +33,9 @@ export default function Credits({ authorDetails }) {
           <li>Tyler Menezes: For helping with technical questions</li>
         </ul>
         <ul role="list" className="list-disc space-y-3 pl-5 text-slate-400 marker:text-gray-400 ">
+          <li>Moses Turner: For helping with technical questions and providing sample videos</li>
+        </ul>
+        <ul role="list" className="list-disc space-y-3 pl-5 text-slate-400 marker:text-gray-400 ">
           <li>Shubham Patil: For helping with technical questions</li>
         </ul>
         <ul
