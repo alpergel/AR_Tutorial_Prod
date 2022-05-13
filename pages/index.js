@@ -90,7 +90,6 @@ export default function Home({ posts }) {
                     <Image src={'/static/images/giphy.gif'} alt="my gif" height={500} width={500} />
                     <video
                       src={sampleVideo1}
-                      className="container"
                       controls
                       onMouseEnter={startPreview}
                       onMouseLeave={stopPreview}
