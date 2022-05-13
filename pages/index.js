@@ -9,6 +9,7 @@ import NewsletterForm from '@/components/NewsletterForm'
 import ReactPlayer from 'react-player'
 import React from 'react'
 import Image from '@/components/Image'
+
 const MAX_DISPLAY = 5
 
 export async function getStaticProps() {
@@ -36,11 +37,11 @@ export default function Home({ posts }) {
           </h1>
           <div className="p-1">
             <h2 className="mb-3 text-2xl font-bold leading-8 tracking-tight">
-              Some sample videos to start getting you excited about AR:
+              Some sample videos to get you excited about AR:
             </h2>
           </div>
 
-          <div className="grid grid-cols-2 gap-2">
+          <div className="grid grid-cols-2 gap-4">
             <div className="-m-4 flex space-x-4">
               <div className="aspect-w-16 aspect-h-9">
                 <div className="md md:1/2 p-4" style={{ maxWidth: '544px' }}>
@@ -71,6 +72,12 @@ export default function Home({ posts }) {
                     }
                   >
                     <Image src={'/static/images/giphy.gif'} alt="my gif" height={500} width={500} />
+                    <video width="320" height="240" controls>
+                      <source
+                        src="https://res.cloudinary.com/dssy0cdnx/video/upload/v1652454608/moses_video_xjnltd.mp4"
+                        type="video/mp4"
+                      />
+                    </video>
                     <div className="p-6">
                       <h2 className="mb-3 text-2xl font-bold leading-8 tracking-tight">
                         Sample video showing the possibilities of PNS + SK + Monado
@@ -158,11 +165,6 @@ export default function Home({ posts }) {
           >
             All Posts &rarr;
           </Link>
-        </div>
-      )}
-      {siteMetadata.newsletter.provider !== '' && (
-        <div className="flex items-center justify-center pt-4">
-          <NewsletterForm />
         </div>
       )}
     </>
