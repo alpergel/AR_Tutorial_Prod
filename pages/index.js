@@ -61,7 +61,7 @@ export default function Home({ posts }) {
           <div className="grid grid-cols-2 gap-4">
             <Video_Box
               src={sampleVideo1}
-              description={'test'}
+              description={'Painting with Monado Hand Tracking and Stereokit (prototype)'}
               width={500}
               height={500}
               onMouseEnter={startPreview}
