@@ -87,9 +87,10 @@ export default function Home({ posts }) {
                       '  overflow-hidden rounded-md border-2 border-gray-200 border-opacity-60 dark:border-gray-700'
                     }
                   >
-                    <Image src={'/static/images/giphy.gif'} alt="my gif" height={500} width={500} />
                     <video
                       src={sampleVideo1}
+                      width="500"
+                      height="500"
                       controls
                       onMouseEnter={startPreview}
                       onMouseLeave={stopPreview}
