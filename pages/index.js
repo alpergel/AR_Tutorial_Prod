@@ -6,10 +6,10 @@ import { getAllFilesFrontMatter } from '@/lib/mdx'
 import formatDate from '@/lib/utils/formatDate'
 import Slide from 'react-reveal/Slide'
 import NewsletterForm from '@/components/NewsletterForm'
-import ReactPlayer from 'react-player'
 import React from 'react'
+import { useCallback } from 'react'
 import Video_Box from '@/components/video_box'
-
+import useEmblaCarousel from 'embla-carousel-react'
 import Image from '@/components/Image'
 
 const MAX_DISPLAY = 5
@@ -36,6 +36,17 @@ export default function Home({ posts }) {
   }
   const sampleVideo1 =
     'https://res.cloudinary.com/dssy0cdnx/video/upload/v1652454608/moses_video_xjnltd.mp4'
+
+  const [emblaRef, emblaApi] = useEmblaCarousel()
+
+  const scrollPrev = useCallback(() => {
+    if (emblaApi) emblaApi.scrollPrev()
+  }, [emblaApi])
+
+  const scrollNext = useCallback(() => {
+    if (emblaApi) emblaApi.scrollNext()
+  }, [emblaApi])
+
   return (
     <>
       <div className="divide-y divide-gray-200 dark:divide-gray-700">
@@ -93,52 +104,153 @@ export default function Home({ posts }) {
             </h1>
             <p className="text-lg leading-7 text-gray-500 dark:text-gray-400">
               Click on the post below to start your OSS augmented reality journey. If you have
-              already began the tutorial series, please click the "All tutorials" tab in the page
-              header, and select the next tutorial that you would like to read.
+              already began the first part of this tutorial series, please click the "next" button
+              below until you find the next part that you would like to read. Or, you can also click
+              the "All tutorials" tab in the page header, and select the next tutorial that you
+              would like to read on that page. Enjoy!
             </p>
           </div>
-          <ul className="divide-y divide-gray-200 dark:divide-gray-700">
-            <li key="tutorial-vocab" className="py-12">
-              <article className="transition hover:translate-x-2 hover:translate-y-2">
-                <div className="space-y-2 xl:grid xl:grid-cols-4 xl:items-baseline xl:space-y-0">
-                  <dl>
-                    <dt className="sr-only">Published on</dt>
-                    <dd className="text-base font-medium leading-6 text-gray-500 dark:text-gray-400">
-                      <time dateTime="2022-05-13">{formatDate('2022-05-13')}</time>
-                    </dd>
-                  </dl>
-                  <div className="space-y-5 xl:col-span-3">
-                    <div className="space-y-6">
-                      <div>
-                        <h2 className="text-2xl font-bold leading-8 tracking-tight">
-                          <Link
-                            href={`/blog/tutorial-vocab`}
-                            className="text-gray-900 dark:text-gray-100"
-                          >
-                            1. Tutorial Vocab
-                          </Link>
-                        </h2>
+          <ul className="divide-y divide-gray-200 dark:divide-gray-700"></ul>
+          <div className="embla">
+            <div className="embla__viewport" ref={emblaRef}>
+              <div className="embla__container">
+                <div className="embla__slide">
+                  <li key="tutorial-vocab" className="py-12">
+                    <article className="transition hover:translate-x-2 hover:translate-y-2">
+                      <div className="space-y-2 xl:grid xl:grid-cols-4 xl:items-baseline xl:space-y-0">
+                        <dl>
+                          <dt className="sr-only">Published on</dt>
+                          <dd className="text-base font-medium leading-6 text-gray-500 dark:text-gray-400">
+                            <time dateTime="2022-05-13">{formatDate('2022-05-13')}</time>
+                          </dd>
+                        </dl>
+                        <div className="space-y-5 xl:col-span-3">
+                          <div className="space-y-6">
+                            <div>
+                              <h2 className="text-2xl font-bold leading-8 tracking-tight">
+                                <Link
+                                  href={`/blog/tutorial-vocab`}
+                                  className="text-gray-900 dark:text-gray-100"
+                                >
+                                  1. Tutorial Vocab
+                                </Link>
+                              </h2>
+                            </div>
+                            <div className="prose max-w-none text-gray-500 dark:text-gray-400">
+                              Please read through this first post to learn and understand all of the
+                              commonly used libraries, vocabulary terms, and abbreviations
+                              throughout the rest of the tutorial series.
+                            </div>
+                          </div>
+                          <div className="text-base font-medium leading-6">
+                            <Link
+                              href={`/blog/tutorial-vocab`}
+                              className="text-primary-500 hover:text-primary-600 dark:hover:text-primary-400"
+                              aria-label={`Read Tutorial Vocab`}
+                            >
+                              Read more &rarr;
+                            </Link>
+                          </div>
+                        </div>
                       </div>
-                      <div className="prose max-w-none text-gray-500 dark:text-gray-400">
-                        Please read through this first post to learn and understand all of the
-                        commonly used libraries, vocabulary terms, and abbreviations throughout the
-                        rest of the tutorial series.
-                      </div>
-                    </div>
-                    <div className="text-base font-medium leading-6">
-                      <Link
-                        href={`/blog/tutorial-vocab`}
-                        className="text-primary-500 hover:text-primary-600 dark:hover:text-primary-400"
-                        aria-label={`Read Tutorial Vocab`}
-                      >
-                        Read more &rarr;
-                      </Link>
-                    </div>
-                  </div>
+                    </article>
+                  </li>
                 </div>
-              </article>
-            </li>
-          </ul>
+                <div className="embla__slide">
+                  <li key="tutorial-vocab" className="py-12">
+                    <article className="transition hover:translate-x-2 hover:translate-y-2">
+                      <div className="space-y-2 xl:grid xl:grid-cols-4 xl:items-baseline xl:space-y-0">
+                        <dl>
+                          <dt className="sr-only">Published on</dt>
+                          <dd className="text-base font-medium leading-6 text-gray-500 dark:text-gray-400">
+                            <time dateTime="2022-05-13">{formatDate('2022-05-13')}</time>
+                          </dd>
+                        </dl>
+                        <div className="space-y-5 xl:col-span-3">
+                          <div className="space-y-6">
+                            <div>
+                              <h2 className="text-2xl font-bold leading-8 tracking-tight">
+                                <Link
+                                  href={`/blog/tutorial-vocab`}
+                                  className="text-gray-900 dark:text-gray-100"
+                                >
+                                  2. ARTICLE FILL
+                                </Link>
+                              </h2>
+                            </div>
+                            <div className="prose max-w-none text-gray-500 dark:text-gray-400">
+                              Please read through this first post to learn and understand all of the
+                              commonly used libraries, vocabulary terms, and abbreviations
+                              throughout the rest of the tutorial series.
+                            </div>
+                          </div>
+                          <div className="text-base font-medium leading-6">
+                            <Link
+                              href={`/blog/tutorial-vocab`}
+                              className="text-primary-500 hover:text-primary-600 dark:hover:text-primary-400"
+                              aria-label={`Read Tutorial Vocab`}
+                            >
+                              Read more &rarr;
+                            </Link>
+                          </div>
+                        </div>
+                      </div>
+                    </article>
+                  </li>
+                </div>
+                <div className="embla__slide">
+                  <li key="tutorial-vocab" className="py-12">
+                    <article className="transition hover:translate-x-2 hover:translate-y-2">
+                      <div className="space-y-2 xl:grid xl:grid-cols-4 xl:items-baseline xl:space-y-0">
+                        <dl>
+                          <dt className="sr-only">Published on</dt>
+                          <dd className="text-base font-medium leading-6 text-gray-500 dark:text-gray-400">
+                            <time dateTime="2022-05-13">{formatDate('2022-05-13')}</time>
+                          </dd>
+                        </dl>
+                        <div className="space-y-5 xl:col-span-3">
+                          <div className="space-y-6">
+                            <div>
+                              <h2 className="text-2xl font-bold leading-8 tracking-tight">
+                                <Link
+                                  href={`/blog/tutorial-vocab`}
+                                  className="text-gray-900 dark:text-gray-100"
+                                >
+                                  3. ARTICLE FILL
+                                </Link>
+                              </h2>
+                            </div>
+                            <div className="prose max-w-none text-gray-500 dark:text-gray-400">
+                              Please read through this first post to learn and understand all of the
+                              commonly used libraries, vocabulary terms, and abbreviations
+                              throughout the rest of the tutorial series.
+                            </div>
+                          </div>
+                          <div className="text-base font-medium leading-6">
+                            <Link
+                              href={`/blog/tutorial-vocab`}
+                              className="text-primary-500 hover:text-primary-600 dark:hover:text-primary-400"
+                              aria-label={`Read Tutorial Vocab`}
+                            >
+                              Read more &rarr;
+                            </Link>
+                          </div>
+                        </div>
+                      </div>
+                    </article>
+                  </li>
+                </div>
+              </div>
+            </div>
+            <div className="forward-back-button">
+              <button className="embla__prev" onClick={scrollPrev}>
+                Prev
+              </button>
+              <button className="embla__next" onClick={scrollNext}>
+                Next
+              </button>
+            </div>
+          </div>
         </div>
       </Slide>
       {posts.length > MAX_DISPLAY && (

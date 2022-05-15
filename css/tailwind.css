@@ -36,3 +36,24 @@ input:-webkit-autofill:focus {
 .animate-fadeIn {
   animation: fadeIn 2s ease-in forwards;
 }
+.embla {
+  overflow: hidden;
+}
+.embla__container {
+  display: flex;
+}
+.embla__slide {
+  position: relative;
+  flex: 0 0 100%;
+}
+.embla__prev {
+  margin-left: 0%;
+  margin-right: 95%;
+}
+.embla__next {
+  margin-left: 1250%;
+  margin-right: 0%;
+}
+.forward-back-button {
+  display: inline-flex;
+}
