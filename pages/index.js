@@ -36,7 +36,8 @@ export default function Home({ posts }) {
   }
   const sampleVideo1 =
     'https://res.cloudinary.com/dssy0cdnx/video/upload/v1652454608/moses_video_xjnltd.mp4'
-
+  const sampleVideo2 =
+    'https://res.cloudinary.com/dssy0cdnx/video/upload/v1653668586/StereoKitWorldGlow_ifqw2u.mp4'
   const [emblaRef, emblaApi] = useEmblaCarousel()
 
   const scrollPrev = useCallback(() => {
@@ -80,13 +81,13 @@ export default function Home({ posts }) {
               author="Credit: Moses Turner"
             />
             <Video_Box
-              src={sampleVideo1}
-              description={'test'}
+              src={sampleVideo2}
+              description={'Experimenting with StereoKit world glow effects'}
               width={500}
               height={500}
               onMouseEnter={startPreview}
               onMouseLeave={stopPreview}
-              author="Credit: Moses Turner"
+              author="Credit: Nick Klingensmith "
             />
           </div>
           <p className="text-lg leading-7 text-gray-500 dark:text-gray-400">
