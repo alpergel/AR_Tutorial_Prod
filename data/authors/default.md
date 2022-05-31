@@ -1,6 +1,6 @@
 ---
 name: Alper Gel
-avatar: /static/images/avatar.png
+avatar: /static/images/alp3.jpg
 occupation: Research Student at ASU Interactive Robotics Laboratory, AI/CV Intern at RadiusAI
 company: UC Berkeley
 email: alperbora04@gmail.com

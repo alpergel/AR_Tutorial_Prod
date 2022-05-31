@@ -34,7 +34,6 @@ export default function Credits({ authorDetails }) {
         </ul>
         <ul role="list" className="list-disc space-y-3 pl-5 text-slate-400 marker:text-gray-400 ">
           <li>
-            {' '}
             Nick Klingensmith: For helping with technical questions and providing sample videos
           </li>
         </ul>
